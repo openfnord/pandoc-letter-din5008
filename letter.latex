@@ -24,6 +24,10 @@ $endfor$
 \usepackage[right]{eurosym}
 \DeclareUnicodeCharacter{20AC}{\euro}
 
+$for(header-includes)$
+$header-includes$
+$endfor$
+
 \makeatletter
     \setlength{\@tempskipa}{-1.2cm}%
     \@addtoplength{toaddrheight}{\@tempskipa}

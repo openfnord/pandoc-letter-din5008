@@ -32,6 +32,8 @@ ps: |
    \textbf{Postskriptum \today}
 
    Noch ein Gedanke zum Schluss.
+header-includes: |
+   \usepackage[oldstylenums]{kpfonts}
 ---
 ```
 
@@ -83,4 +85,6 @@ The following yaml variables are supported:
 - `address`
 
 If you want to add some options to the `scrlttr2` document class, you can list
-them via the `letteroption` yaml variable.
+them via the `letteroption` yaml variable. If you want to add material to the
+\LaTeX\ preamble, you can use the `header-includes` yaml variable as in the
+example above.
