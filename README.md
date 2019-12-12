@@ -13,6 +13,7 @@ A simple letter in Markdown looks like the following:
 
 ```yaml
 ---
+lang: de-DE
 author: Max Mustermann
 phone: +49 1234 56789
 email: max.mustermann@beispiel.de
@@ -35,6 +36,9 @@ ps: |
 header-includes: |
    \usepackage[oldstylenums]{kpfonts}
 ---
+::: {lang=en-GB}
+Far far away, behind the word mountains, …
+:::
 ```
 
 The compiled result will then look like this:
@@ -65,7 +69,7 @@ ln -s your-repo-path/letter.latex ~/.pandoc/templates
 After creating a letter written in Markdown you can compile it into PDF with the
 following line:
 
-`pandoc letter.md -s -o letter.pdf --template=letter`
+`pandoc letter.md -o letter.pdf --template=letter`
 
 
 ## Configuration
@@ -74,8 +78,6 @@ The following yaml variables are supported:
 
 - `opening`
 - `closing`
-- `enclosed`
-- `ps`
 - `author`
 - `phone`
 - `email`
@@ -83,8 +85,11 @@ The following yaml variables are supported:
 - `subject`
 - `return-address`
 - `address`
+- `enclosed`
+- `ps`
 
 If you want to add some options to the `scrlttr2` document class, you can list
 them via the `letteroption` yaml variable. If you want to add material to the
 \LaTeX\ preamble, you can use the `header-includes` yaml variable as in the
-example above.
+example above. If you want write all or parts of your letter in different
+language(s), you can use [Pandoc's `lang` variable](https://pandoc.org/MANUAL.html#language-variables).

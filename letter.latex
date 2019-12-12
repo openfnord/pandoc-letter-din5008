@@ -2,24 +2,29 @@
     foldmarks=true,      % print foldmarks
     foldmarks=BTm,       % show foldmarks top, middle, bottom
     fromalign=right,     % letter head on the right
-$if(phone)$    fromphone,$endif$           % show phone number
-$if(email)$    fromemail,$endif$           % show email
-$if(fromlogo)$    fromlogo,$endif$            % show logo in letter head
+$if(phone)$
+    fromphone,           % show phone number
+$endif$
+$if(email)$
+    fromemail,           % show email
+$endif$
+$if(fromlogo)$
+    fromlogo,            % show logo in letter head
+$endif$
     version=last,        % latest version of KOMA letter
     parskip=half,        % spread paragraphs by half a baseline
+$if(lang)$
+    $babel-lang$,        % main language of the letter
+$endif$
 $for(letteroption)$
     $letteroption$$sep$,
 $endfor$
 ]{scrlttr2}
 
-\usepackage[ngerman]{babel}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
-\usepackage{graphics}
-
-\usepackage{booktabs}
-\usepackage{longtable}
+\usepackage{graphics,booktabs,longtable}
 
 \usepackage[right]{eurosym}
 \DeclareUnicodeCharacter{20AC}{\euro}
@@ -28,9 +33,16 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
+$if(lang)$
+\usepackage[shorthands=off,$for(babel-otherlangs)$$babel-otherlangs$,$endfor$main=$babel-lang$]{babel}
+$if(babel-newcommands)$
+  $babel-newcommands$
+$endif$
+$endif$
+
 \makeatletter
-    \setlength{\@tempskipa}{-1.2cm}%
-    \@addtoplength{toaddrheight}{\@tempskipa}
+  \setlength{\@tempskipa}{-1.2cm}%
+  \@addtoplength{toaddrheight}{\@tempskipa}
 \makeatother
 
 \setlength{\oddsidemargin}{\useplength{toaddrhpos}}
@@ -41,38 +53,38 @@ $endfor$
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 \begin{document}
-    \setkomavar{fromname}{$author$}
-    \renewcommand*{\raggedsignature}{\raggedright}
-    \setkomavar{fromaddress}{
-        $for(return-address)$
-            $return-address$$sep$\\
-        $endfor$
-    }
-    \setkomavar{fromphone}{$phone$}
-    \setkomavar{fromemail}{$email$}
-    \setkomavar{signature}{$author$}
+  \setkomavar{fromname}{$author$}
+  \renewcommand*{\raggedsignature}{\raggedright}
+  \setkomavar{fromaddress}{
+    $for(return-address)$
+      $return-address$$sep$\\
+    $endfor$
+  }
+  \setkomavar{fromphone}{$phone$}
+  \setkomavar{fromemail}{$email$}
+  \setkomavar{signature}{$author$}
 
-    $if(date)$\setkomavar{date}{$date$}$endif$
-    \setkomavar{place}{$place$}
+  $if(date)$\setkomavar{date}{$date$}$endif$
+  \setkomavar{place}{$place$}
 
-    $if(subject)$\setkomavar{subject}{$subject$}$endif$
+  $if(subject)$\setkomavar{subject}{$subject$}$endif$
 
-    \begin{letter}{%
-        $for(address)$
-            $address$$sep$\\
-        $endfor$}
+  \begin{letter}{%
+    $for(address)$
+      $address$$sep$\\
+    $endfor$}
 
-        \opening{$opening$}
+    \opening{$opening$}
 
-        $body$
+    $body$
 
-        \closing{$closing$}
+    \closing{$closing$}
 
-        $if(ps)$\ps $ps$$endif$
+    $if(ps)$\ps $ps$$endif$
 
-        $if(enclosed)$
-            \setkomavar*{enclseparator}{Anlage}
-            \encl{$enclosed$}
-        $endif$
-    \end{letter}
+    $if(enclosed)$
+      \setkomavar*{enclseparator}{Anlage}
+      \encl{$enclosed$}
+    $endif$
+  \end{letter}
 \end{document}
