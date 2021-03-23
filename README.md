@@ -90,6 +90,7 @@ The following yaml variables are supported:
 - `return-address`
 - `address`
 - `enclosed`
+- `signature`
 - `ps`
 
 If you want to add some options to the `scrlttr2` document class, you can list
