@@ -73,7 +73,7 @@ $endif$
   $else$
   \setkomavar{fromphone}{$phone$}
   $endif$
-  \setkomavar{fromemail}{$email$}
+  \setkomavar{fromemail}{\href{mailto:$email$}{$email$}}
   $if(url)$\setkomavar{fromurl}{\href{https://$url$}{$url$}}$endif$
   \setkomavar{signature}{$if(signature)$\includegraphics[width=3cm]{$signature$}\\$endif$$author$}
 
