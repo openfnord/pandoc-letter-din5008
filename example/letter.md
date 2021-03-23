@@ -2,7 +2,9 @@
 lang: de-DE
 author: Max Mustermann
 phone: +49 1234 56789
+phone-url: \+49123456789
 email: max.mustermann@beispiel.de
+url: example.com
 date: 01.08.2016
 place: Musterstadt
 subject: Titel vom Brief
