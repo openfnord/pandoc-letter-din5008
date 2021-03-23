@@ -16,7 +16,9 @@ A simple letter in Markdown looks like the following:
 lang: de-DE
 author: Max Mustermann
 phone: +49 1234 56789
+phone-url: \+49123456789
 email: max.mustermann@beispiel.de
+url: example.com
 date: 01.08.2016
 place: Musterstadt
 subject: Titel vom Brief
@@ -80,7 +82,9 @@ The following yaml variables are supported:
 - `closing`
 - `author`
 - `phone`
+- `phone-url`
 - `email`
+- `url`
 - `place`
 - `subject`
 - `return-address`
