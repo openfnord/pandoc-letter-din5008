@@ -1,5 +1,6 @@
 \documentclass[
     fontsize=12pt,
+    paper=A4,
     foldmarks=true,      % print foldmarks
     foldmarks=BTm,       % show foldmarks top, middle, bottom
     fromalign=right,     % letter head on the right
