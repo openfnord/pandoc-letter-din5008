@@ -10,6 +10,9 @@ $endif$
 $if(email)$
     fromemail,           % show email
 $endif$
+$if(url)$
+    fromurl,             % show website
+$endif$
 $if(fromlogo)$
     fromlogo,            % show logo in letter head
 $endif$
@@ -64,6 +67,7 @@ $endif$
   }
   \setkomavar{fromphone}{$phone$}
   \setkomavar{fromemail}{$email$}
+  \setkomavar{fromurl}{\href{https://$url$}{$url$}}
   \setkomavar{signature}{$author$}
 
   $if(date)$\setkomavar{date}{$date$}$endif$
