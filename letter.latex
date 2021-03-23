@@ -68,7 +68,7 @@ $endif$
   }
   \setkomavar{fromphone}{$phone$}
   \setkomavar{fromemail}{$email$}
-  \setkomavar{fromurl}{\href{https://$url$}{$url$}}
+  $if(url)$\setkomavar{fromurl}{\href{https://$url$}{$url$}}$endif$
   \setkomavar{signature}{$author$}
 
   $if(date)$\setkomavar{date}{$date$}$endif$
