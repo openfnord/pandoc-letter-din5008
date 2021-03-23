@@ -75,7 +75,7 @@ $endif$
   $endif$
   \setkomavar{fromemail}{$email$}
   $if(url)$\setkomavar{fromurl}{\href{https://$url$}{$url$}}$endif$
-  \setkomavar{signature}{$if(signature)$\includegraphics[width=5cm]{$signature$}\\$endif$$author$}
+  \setkomavar{signature}{$if(signature)$\includegraphics[width=3cm]{$signature$}\\$endif$$author$}
 
   $if(date)$\setkomavar{date}{$date$}$endif$
   \setkomavar{place}{$place$}
