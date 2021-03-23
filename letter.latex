@@ -30,6 +30,7 @@ $endfor$
 \usepackage[utf8]{inputenc}
 
 \usepackage{graphics,booktabs,longtable}
+\usepackage[hidelinks]{hyperref}
 
 \usepackage[right]{eurosym}
 \DeclareUnicodeCharacter{20AC}{\euro}
