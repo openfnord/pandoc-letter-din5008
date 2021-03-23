@@ -31,6 +31,7 @@ address:
 opening: Sehr geehrte Damen und Herren,
 closing: Mit freundlichen Grüßen
 enclosed: Muster, Muster, Muster
+signature: signature.pdf
 ps: |
    \textbf{Postskriptum \today}
 
