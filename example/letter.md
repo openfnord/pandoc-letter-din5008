@@ -8,6 +8,10 @@ url: example.com
 date: 01.08.2016
 place: Musterstadt
 subject: Titel vom Brief
+keywords:
+ - example
+ - letter
+ - DIN 5008
 return-address: [Musterstraße, 12345 Berlin]
 address:
  - Musterfirma GmbH
