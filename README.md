@@ -1,14 +1,10 @@
 # Pandoc Letter Template (DIN 5008)
-
 ## Description
-
 This template allows you to write simple letters in Markdown and convert them
 into nice looking PDFs. The template is based on Koma Script and satisfies
 the German DIN 5008 norm for letters.
 
-
 ## Example
-
 A simple letter in Markdown looks like the following:
 
 ```yaml
@@ -22,6 +18,10 @@ url: example.com
 date: 01.08.2016
 place: Musterstadt
 subject: Titel vom Brief
+keywords:
+ - example
+ - letter
+ - DIN 5008
 return-address: [Musterstraße, 12345 Berlin]
 address:
  - Musterfirma GmbH
@@ -50,17 +50,13 @@ The compiled result will then look like this:
 
 You can also download the compiled PDF [here](/example/letter.pdf).
 
-
 ## Requirements
-
 In order to use the template you must have installed the following components:
 
 - [Pandoc](http://pandoc.org/installing.html)
 - [LaTeX](https://latex-project.org/ftp.html)
 
-
 ## Usage
-
 Before you can make use of the template you need to move the LaTeX template file
 into Pandocs template directory:
 
@@ -74,9 +70,7 @@ following line:
 
 `pandoc letter.md -o letter.pdf --template=letter`
 
-
 ## Configuration
-
 The following yaml variables are supported:
 
 - `opening`
@@ -88,6 +82,7 @@ The following yaml variables are supported:
 - `url`
 - `place`
 - `subject`
+- `keywords`
 - `return-address`
 - `address`
 - `enclosed`
