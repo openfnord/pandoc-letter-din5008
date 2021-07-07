@@ -87,7 +87,7 @@ $endif$
       $address$$sep$\\
     $endfor$}
 
-    \opening{$opening$}
+    \opening{$opening$,}
 
     $body$
 

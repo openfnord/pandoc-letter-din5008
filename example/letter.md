@@ -14,7 +14,7 @@ address:
  - Max Mustermann
  - Musterstraße
  - 12345 Musterstadt
-opening: Sehr geehrte Damen und Herren,
+opening: Sehr geehrte Damen und Herren
 closing: Mit freundlichen Grüßen
 enclosed: Muster, Muster, Muster
 signature: signature.pdf
