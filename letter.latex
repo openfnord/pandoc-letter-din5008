@@ -19,6 +19,7 @@ $if(fromlogo)$
 $endif$
     version=last,        % latest version of KOMA letter
     parskip=half,        % spread paragraphs by half a baseline
+    pagenumber=botright,
 $if(lang)$
     $babel-lang$,        % main language of the letter
 $endif$
@@ -29,6 +30,7 @@ $endfor$
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[iso,german]{isodate}
 
 \usepackage{graphics,booktabs,longtable}
 \usepackage{graphicx}
@@ -76,6 +78,10 @@ $endif$
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
+\renewcommand*\pagemark{%
+  \usekomafont{pagenumber}{\pagename~\thepage~von~\letterlastpage}%
+}
+
 \begin{document}
   \setkomavar{fromname}{$author$}
   \renewcommand*{\raggedsignature}{\raggedright}
@@ -95,7 +101,6 @@ $endif$
   \setkomavar{signature}{$if(signature)$\includegraphics[width=3cm]{$signature$}\\$endif$$author$}
 
   $if(date)$\setkomavar{date}{$date$}$endif$
-  \setkomavar{place}{$place$}
 
   $if(subject)$\setkomavar{subject}{$subject$}$endif$
 

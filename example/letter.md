@@ -5,8 +5,7 @@ phone: +49 1234 56789
 phone-url: \+49123456789
 email: max.mustermann@beispiel.de
 url: example.com
-date: 01.08.2016
-place: Musterstadt
+date: 2016-08-01
 subject: Titel vom Brief
 keywords:
  - example
